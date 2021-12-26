@@ -172,27 +172,39 @@ h1, h2, h3, h4, h5 {
     flex-wrap: wrap;
 }
 
-.big-quote {
-    padding: 50px;
-}
-
-.big-quote > .quote-top {
+.quote-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 100%;
+    background: #fff;
+    box-shadow: 0 1px 6px #20212447;
+    padding: 20px;
+    margin: 20px 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
 }
 
-.big-quote > .quote-top > img {
-    margin-bottom: 20px;
-}
+    .quote-row-bottom {
+        display: flex;
+        overflow-x: auto;
+        margin-top: 20px;
+    }
+
+        .quote-row-bottom > div > a > img {
+            height: 150px;
+            margin-right: 20px;
+        }
 
 .quote {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    margin: 20px;
     background: #fff;
     box-shadow: 0 1px 6px #20212447;
     padding: 20px;
+    margin: 20px;
 }
 
     .quote-top {
@@ -222,6 +234,19 @@ h1, h2, h3, h4, h5 {
             text-decoration: none;
             margin-left: 5px;
         }
+
+.big-quote {
+    width: 100%;
+    padding: 50px;
+}
+
+.big-quote > .quote-top {
+    width: 100%;
+}
+
+.big-quote > .quote-top > img {
+    margin-bottom: 20px;
+}
 
 @media only screen and (max-width: 550px) {
     .content {
