@@ -17,7 +17,7 @@ const app = (() => {
     }
 })();
 
-const PORT = useSSL ? 443 : 3001;
+const PORT = process.env.PORT || (useSSL ? 443 : 3001);
 app.listen('0.0.0.0', PORT, token => {
     if (token) {
         console.log(`Listening on port ${PORT}...`);
