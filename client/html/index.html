@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>MagicQuotes, Positive Quotes, Motivational Quotes.</title>
+    <meta name="description" content="Explore the world through the magic quotes, we share daily positive, motivational and more picture quotes to inspire you everyday!">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon">
+</head>
+
+<body>
+    <nav>
+        <a id="logo" class="nav-link" href="/"></a>
+        <div class="nav-side">
+            <a class="nav-link" href="/" title="Home">Home</a>
+            <div class="nav-link-list">
+                <a class="nav-link" href="/authors" title="Authors">
+                    Authors
+                    <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg>
+                </a>
+                <div id="author-list" class="nav-list"></div>
+            </div>
+            <div class="nav-link-list">
+                <a class="nav-link" href="/quotes" title="Quotes">
+                    Quotes
+                    <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg>
+                </a>
+                <div id="quote-list" class="nav-list"></div>
+            </div>
+        </div>
+    </nav>
+    <div id="background">
+        <form id="search">
+            <button id="search-submit" type="submit">
+                <svg focusable="false" aria-label="Search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+            </button>
+            <input id="search-input" type="search" placeholder="Search here..." autocomplete="off">
+        </form>
+    </div>
+    <div id="landing" class="page" style="display:none"></div>
+    <div id="authors" class="page" style="display:none">
+        <h1></h1>
+        <h2></h2>
+        <div class="quotes content"></div>
+    </div>
+    <div id="quotes" class="page" style="display:none">
+        <h1></h1>
+        <div class="quotes content"></div>
+    </div>
+    <div id="about" class="page" style="display:none">
+        <div class="content">
+            <h1>About us</h1>
+            <p>Have you ever been inspired by a quote that you read in a book or one of your favorite books, maybe by a famous author. Many of us have been inspired at least once by a quote in our lives. It could be a positive quote or motivational quote. There are millions of quotes about any topic. Quotes helps us to understand better, some quotes might just some short words or sentences but the experience and the knowledge we gain is a lot! at MagicQuotes.org our goal is to share daily positive quotes, motivational quotes and more quotes about any topic to inspire you every day.</p>
+        </div>
+    </div>
+    <div id="contact" class="page" style="display:none">
+        <div class="content">
+            <h1>Contact Form</h1>
+            <form id="contact-form">
+                <label>
+                    Your name
+                    <input id="contact-name" type="text" size="40" aria-invalid="false" required>
+                </label>
+                <label>
+                    Your email
+                    <input id="contact-email" type="email" size="40" aria-invalid="false" required>
+                </label>
+                <label>
+                    Subject
+                    <input id="contact-subject" type="text" size="40" aria-invalid="false" required>
+                </label>
+                <label>
+                    Your message (optional)
+                    <textarea id="contact-message" cols="40" rows="10" aria-invalid="false"></textarea>
+                </label>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div id="privacy" class="page" style="display:none">
+        <div class="content">
+            <h1>Privacy Policy</h1>
+            <h2>Who we are</h2>
+            <p>Our website address is: https://www.magicquotes.org</p>
+            <h2>Comments</h2>
+            <p>When visitors leave comments on the site we collect the data shown in the comments form, and also the visitor’s IP address and browser user agent string to help spam detection.</p>
+            <p>An anonymized string created from your email address (also called a hash) may be provided to the Gravatar service to see if you are using it. The Gravatar service privacy policy is available here: https://automattic.com/privacy/. After approval of your comment, your profile picture is visible to the public in the context of your comment.</p>
+            <h2>Media</h2>
+            <p>If you upload images to the website, you should avoid uploading images with embedded location data (EXIF GPS) included. Visitors to the website can download and extract any location data from images on the website.</p>
+            <h2>Cookies</h2>
+            <p>If you leave a comment on our site you may opt-in to saving your name, email address and website in cookies. These are for your convenience so that you do not have to fill in your details again when you leave another comment. These cookies will last for one year.</p>
+            <p>If you visit our login page, we will set a temporary cookie to determine if your browser accepts cookies. This cookie contains no personal data and is discarded when you close your browser.</p>
+            <p>When you log in, we will also set up several cookies to save your login information and your screen display choices. Login cookies last for two days, and screen options cookies last for a year. If you select “Remember Me”, your login will persist for two weeks. If you log out of your account, the login cookies will be removed.</p>
+            <p>If you edit or publish an article, an additional cookie will be saved in your browser. This cookie includes no personal data and simply indicates the post ID of the article you just edited. It expires after 1 day.</p>
+            <h2>Embedded content from other websites</h2>
+            <p>Articles on this site may include embedded content (e.g. videos, images, articles, etc.). Embedded content from other websites behaves in the exact same way as if the visitor has visited the other website.</p>
+            <p>These websites may collect data about you, use cookies, embed additional third-party tracking, and monitor your interaction with that embedded content, including tracking your interaction with the embedded content if you have an account and are logged in to that website.</p>
+            <h2>Who we share your data with</h2>
+            <p>If you request a password reset, your IP address will be included in the reset email.</p>
+            <h2>How long we retain your data</h2>
+            <p>If you leave a comment, the comment and its metadata are retained indefinitely. This is so we can recognize and approve any follow-up comments automatically instead of holding them in a moderation queue.</p>
+            <p>For users that register on our website (if any), we also store the personal information they provide in their user profile. All users can see, edit, or delete their personal information at any time (except they cannot change their username). Website administrators can also see and edit that information.</p>
+            <h2>What rights you have over your data</h2>
+            <p>If you have an account on this site, or have left comments, you can request to receive an exported file of the personal data we hold about you, including any data you have provided to us. You can also request that we erase any personal data we hold about you. This does not include any data we are obliged to keep for administrative, legal, or security purposes.</p>
+            <h2>Where we send your data</h2>
+            <p>Visitor comments may be checked through an automated spam detection service.</p>
+        </div>
+    </div>
+    <div id="terms" class="page" style="display:none">
+        <div class="content">
+            <h1>Terms of Use</h1>
+            <p><b>Last updated:</b> October 2, 2021</p>
+            <p>Please read these Terms of Use (“Terms”, “Terms of Use”) carefully before using the https://www.magicquotes.org website (the “Service”) operated by MagicQuotes (“us”, “we”, or “our”).</p>
+            <p>Your access to and use of the Service is conditioned on your acceptance of and compliance with these Terms. These Terms apply to all visitors, users and others who access or use the Service.</p>
+            <p>By accessing or using the Service you agree to be bound by these Terms. If you disagree with any part of the terms then you may not access the Service.</p>
+            <h2>Accounts</h2>
+            <p>When you create an account with us, you must provide us information that is accurate, complete, and current at all times. Failure to do so constitutes a breach of the Terms, which may result in immediate termination of your account on our Service.</p>
+            <p>You are responsible for safeguarding the password that you use to access the Service and for any activities or actions under your password, whether your password is with our Service or a third-party service.</p>
+            <p>You agree not to disclose your password to any third party. You must notify us immediately upon becoming aware of any breach of security or unauthorized use of your account.</p>
+            <h2>Intellectual Property</h2>
+            The Service and its original content, features and functionality are and will remain the exclusive property of MagicQuotes and its licensors.
+            <h2>Links To Other Web Sites</h2>
+            <p>Our Service may contain links to third-party web sites or services that are not owned or controlled by MagicQuotes.</p>
+            <p>MagicQuotes, has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party web sites or services. You further acknowledge and agree that MagicQuotes, shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such content, goods or services available on or through any such web sites or services.</p>
+            <p>We strongly advise you to read the terms and conditions and privacy policies of any third-party web sites or services that you visit.</p>
+            <h2>Termination</h2>
+            <p>We may terminate or suspend your account immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms.</p>
+            <p>Upon termination, your right to use the Service will immediately cease. If you wish to terminate your account, you may simply discontinue using the Service.</p>
+            <p>All provisions of the Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity and limitations of liability.</p>
+            <h2>Disclaimer</h2>
+            <p>Your use of the Service is at your sole risk. The Service is provided on an “AS IS” and “AS AVAILABLE” basis. The Service is provided without warranties of any kind, whether express or implied, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, non-infringement or course of performance.</p>
+            <h2>Governing Law</h2>
+            <p>These Terms shall be governed and construed in accordance with the laws of United States without regard to its conflict of law provisions.</p>
+            <p>Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect. These Terms constitute the entire agreement between us regarding our Service, and supersede and replace any prior agreements we might have between us regarding the Service.</p>
+            <h2>Changes</h2>
+            <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material we will try to provide at least 30 days notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</p>
+            <p>By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.</p>
+            <h2>Contact Us</h2>
+            <p>If you have any questions about these Terms, please contact us.</p>
+        </div>
+    </div>
+    <footer>
+        <div id="footer-top">
+            <a class="nav-link" href="/"></a>
+            <div>
+                <a class="nav-link" href="/about">About Us</a>
+                <a class="nav-link" href="/contact">Contact Form</a>
+                <a class="nav-link" href="/privacy">Privacy Policy</a>
+                <a class="nav-link" href="/terms">Terms of Use</a>
+            </div>
+            <div>
+                <a href="https://facebook.com/Magic-Quotes-109427361285393" title="Facebook">
+                    <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg>
+                </a>
+                <a href="https://twitter.com/Magic_Quotess" title="Twitter">
+                    <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg>
+                </a>
+                <a href="https://pinterest.com/Magically_Quotes" title="Pinterest">
+                    <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M496 256c0 137-111 248-248 248-25.6 0-50.2-3.9-73.4-11.1 10.1-16.5 25.2-43.5 30.8-65 3-11.6 15.4-59 15.4-59 8.1 15.4 31.7 28.5 56.8 28.5 74.8 0 128.7-68.8 128.7-154.3 0-81.9-66.9-143.2-152.9-143.2-107 0-163.9 71.8-163.9 150.1 0 36.4 19.4 81.7 50.3 96.1 4.7 2.2 7.2 1.2 8.3-3.3.8-3.4 5-20.3 6.9-28.1.6-2.5.3-4.7-1.7-7.1-10.1-12.5-18.3-35.3-18.3-56.6 0-54.7 41.4-107.6 112-107.6 60.9 0 103.6 41.5 103.6 100.9 0 67.1-33.9 113.6-78 113.6-24.3 0-42.6-20.1-36.7-44.8 7-29.5 20.5-61.3 20.5-82.6 0-19-10.2-34.9-31.4-34.9-24.9 0-44.9 25.7-44.9 60.2 0 22 7.4 36.8 7.4 36.8s-24.5 103.8-29 123.2c-5 21.4-3 51.6-.9 71.2C65.4 450.9 0 361.1 0 256 0 119 111 8 248 8s248 111 248 248z"></path></svg>
+                </a>
+                <a href="https://instagram.com/magically.quotes" title="Instagram">
+                    <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg>
+                </a>
+            </div>
+        </div>
+        <div id="footer-bottom">© 2021 MagicQuotes.org. All rights reserved.</div>
+    </footer>
+</body>
+
+</html>

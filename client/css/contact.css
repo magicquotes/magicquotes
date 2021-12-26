@@ -1,0 +1,28 @@
+#contact-form, #contact-form > label {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact-form input, #contact-form textarea {
+    margin-bottom: 20px;
+}
+
+#contact-form textarea {
+    min-height: 24px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+#contact-form button {
+    width: fit-content;
+    background: var(--color0);
+    color: #fff;
+    border: 0;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#contact-form button:hover {
+    background: var(--color0hover);
+}

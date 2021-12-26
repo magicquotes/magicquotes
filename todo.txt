@@ -1,0 +1,10 @@
+categories
+    authors
+    quotes
+dynamic header
+dynamic document.title
+// plus/minus svg
+// search
+mobile
+github
+heroku
