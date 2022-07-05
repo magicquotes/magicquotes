@@ -1,5 +1,5 @@
 const DEBUG = process.argv[2] == '--debug';
-const PORT = DEBUG ? 3001 : 443;
+const PORT = DEBUG ? 3001 : 80;
 
 const app = uws.App();
 app.listen('0.0.0.0', PORT, token => {
