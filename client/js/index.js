@@ -39,24 +39,25 @@ function updatePage(href) {
                     authors.append(makeQuote(quote, false));
                 }
             });
-        } else {
-            authors.innerHTML = '';
-            authors.append(makeQuote(path.slice(2).join('/'), true));
         }
     } else if (path[1] === 'quotes') {
         const quotes = document.querySelector('#quotes > .quotes');
+        quotes.innerHTML = '';
+        quotes.append(makeQuote(path[2], true));
+    } else if (path[1] === 'tags') {
+        const tags = document.querySelector('#tags > .quotes');
         if (path.length === 2) {
-            fetch(`/quotes.json`).then(res => res.json()).then(data => {
+            fetch(`/tags.json`).then(res => res.json()).then(data => {
                 for (const row of makeQuoteRows('quotes', data)) {
-                    quotes.append(row);
+                    tags.append(row);
                 }
             });
         } else {
-            fetch(`/quotes/${path[2]}.json`).then(res => res.json()).then(data => {
+            fetch(`/tags/${path[2]}.json`).then(res => res.json()).then(data => {
                 document.querySelector('#quotes > h1').innerText = `${path[2].replaceAll('-', ' ')} Quotes`;
-                quotes.innerHTML = '';
+                tags.innerHTML = '';
                 for (const quote of data) {
-                    quotes.append(makeQuote(quote, false));
+                    tags.append(makeQuote(quote, false));
                 }
             });
         }
@@ -87,7 +88,7 @@ function makeQuoteRows(prefix, data) {
         fetch(`/${prefix}/${row}.json`).then(res => res.json()).then(data => {
             for (const quote of data) {
                 const quoteElement = document.createElement('div');
-                quoteElement.innerHTML = `<a href="/authors/${quote}"><img src="/authors/${quote}.jpeg"></a><div><a></a><a></a><a></a></div>`;
+                quoteElement.innerHTML = `<a href="/quotes/${quote}"><img src="/quotes/${quote}.png"></a><div><a></a><a></a><a></a></div>`;
                 bottom.append(quoteElement);
             }
         });
@@ -106,29 +107,29 @@ function makeQuote(name, big) {
     const top = document.createElement(big ? 'blockquote' : 'a');
     top.classList.add('quote-top');
     if (!big) {
-        top.href = `/authors/${name}`;
+        top.href = `/quotes/${name}`;
         onLink(top);
     }
-    top.innerHTML = `<img src="/authors/${name}.jpeg">`;
+    top.innerHTML = `<img src="/quotes/${name}.png">`;
     const text = document.createTextNode('?');
     top.append(text);
     quote.append(top);
     const author = document.createElement('a');
     author.classList.add('quote-author');
-    author.href = `/authors/${name.split('/')[0]}`;
+    author.href = `/authors/?`;
     author.innerText = '?';
     onLink(author);
     quote.append(author);
     const tags = document.createElement('div');
     tags.innerText = 'Tags: ?';
     quote.append(tags);
-    fetch(`/authors/${name}.json`).then(res => res.json()).then(data => {
+    fetch(`/quotes/${name}.json`).then(res => res.json()).then(data => {
         text.nodeValue = data.text;
         author.innerText = data.author;
         tags.innerText = 'Tags:';
         for (const tag of data.tags) {
             const tagElement = document.createElement('a');
-            tagElement.href = `/quotes/${tag}`;
+            tagElement.href = `/tags/${tag}`;
             tagElement.innerText = `${tag} Quotes`;
             onLink(tagElement);
             tags.append(tagElement);
@@ -157,10 +158,10 @@ function autorun() {
             document.getElementById('author-list').append(link);
         }
     });
-    fetch(`/quotes.json`).then(res => res.json()).then(data => {
+    fetch(`/tags.json`).then(res => res.json()).then(data => {
         for (const tag of data) {
             const link = document.createElement('a');
-            link.href = `/quotes/${tag}`;
+            link.href = `/tags/${tag}`;
             link.innerText = `${tag} Quotes`;
             onLink(link);
             document.getElementById('quote-list').append(link);

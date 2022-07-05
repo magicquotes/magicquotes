@@ -2,12 +2,13 @@
     "name": "magicquotes",
     "version": "1.0.0",
     "scripts": {
-        "start": "node build/build.js && node build/out/server.js"
+        "start": "node build.js && node out/server.js",
+		"debug": "node build.js --debug && node out/server.js --debug"
     },
     "dependencies": {
         "@babel/core": "^7.16.0",
         "@babel/preset-env": "^7.16.4",
         "html-minifier": "^4.0.0",
-        "uWebSockets.js": "github:uNetworking/uWebSockets.js#v20.1.0"
+        "uWebSockets.js": "github:uNetworking/uWebSockets.js#v20.10.0"
     }
 }

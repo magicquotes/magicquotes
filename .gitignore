@@ -1,10 +1,7 @@
 node_modules
 
-# Build folder
-build/out
-
-# Contact
-contact
+# Build output folder
+out
 
 # SSL Certificates
 *.pem

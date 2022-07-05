@@ -1,5 +1,5 @@
 :root {
-    --header: 48px;
+    --header: 70px;
     --color0: #1068F0;
     --color0hover: #1050b2;
     --color1: #2c50a1;
@@ -23,8 +23,8 @@ nav {
 
 #logo {
     position: absolute;
-    left: 15px;
-    top: 8px;
+    left: 24px;
+    top: calc(var(--header) / 2 - 16px);
     width: 94px;
     height: 32px;
     background: url("/logo.png");
@@ -73,7 +73,7 @@ nav {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: calc(var(--header) - 6px);
+    top: calc(var(--header) - 17px);
     visibility: hidden;
     max-height: 500px;
     overflow-y: auto;
@@ -108,7 +108,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 180px;
+    height: 300px;
     background: url("/background.png") center/cover;
 }
 

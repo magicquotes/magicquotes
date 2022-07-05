@@ -1,25 +1,9 @@
-const useSSL = fs.existsSync('cert.pem');
-const app = (() => {
-    if (useSSL) {
-        uws.App().get('/**', (res, req) => {
-            res.onAborted(() => {});
-            res.writeStatus('301');
-            res.writeHeader('location', 'https://magicquotes.org' + req.getUrl());
-            res.end();
-        }).listen('0.0.0.0', 80, () => { });
+const DEBUG = process.argv[2] == '--debug';
+const PORT = DEBUG ? 3001 : 443;
 
-        return uws.SSLApp({
-            cert_file_name: 'cert.pem',
-            key_file_name: 'key.pem',
-        });
-    } else {
-        return uws.App();
-    }
-})();
-
-const PORT = process.env.PORT || (useSSL ? 443 : 3001);
+const app = uws.App();
 app.listen('0.0.0.0', PORT, token => {
-    if (token) {
-        console.log(`Listening on port ${PORT}...`);
-    }
+	if (token) {
+		console.log(`Listening on port ${PORT}...`);
+	}
 });
