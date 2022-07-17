@@ -17,14 +17,18 @@ function updatePage(href) {
     page.style = '';
 
     if (href !== '/') {
-        document.querySelector('[href="/' + path[1] + '"]').classList.add('nav-link-active');
+        document.querySelector('[href="/' + path[1] + '"]')?.classList.add('nav-link-active');
     }
 
     document.querySelector('#authors > h1, #authors > h2, #quotes > h1').style = path.length === 3 ? '' : 'display:none';
     if (path[1] === 'authors') {
+        const authorsH1 = document.querySelector('#authors > h1');
+        const authorsH2 = document.querySelector('#authors > h2');
         const authors = document.querySelector('#authors > .quotes');
         if (path.length === 2) {
             fetch(`/authors.json`).then(res => res.json()).then(data => {
+                authorsH1.innerText = authorsH2.innerText = '';
+                authors.innerHTML = '';
                 for (const row of makeQuoteRows('authors', data)) {
                     authors.append(row);
                 }
@@ -32,8 +36,8 @@ function updatePage(href) {
         } else if (path.length === 3) {
             fetch(`/authors/${path[2]}.json`).then(res => res.json()).then(data => {
                 const name = path[2].replaceAll('-', ' ');
-                document.querySelector('#authors > h1').innerText = `${name} Quotes`;
-                document.querySelector('#authors > h2').innerText = `Discover Most Famous Quotes by ${name}`;
+                authorsH1.innerText = `${name} Quotes`;
+                authorsH2.innerText = `Discover Most Famous Quotes by ${name}`;
                 authors.innerHTML = '';
                 for (const quote of data) {
                     authors.append(makeQuote(quote, false));
@@ -88,7 +92,7 @@ function makeQuoteRows(prefix, data) {
         fetch(`/${prefix}/${row}.json`).then(res => res.json()).then(data => {
             for (const quote of data) {
                 const quoteElement = document.createElement('div');
-                quoteElement.innerHTML = `<a href="/quotes/${quote}"><img src="/quotes/${quote}.png"></a><div><a></a><a></a><a></a></div>`;
+                quoteElement.innerHTML = `<a href="/quotes/${quote}"><img src="/quotes/${quote}.png" loading="lazy"></a><div><a></a><a></a><a></a></div>`;
                 bottom.append(quoteElement);
             }
         });
@@ -114,18 +118,11 @@ function makeQuote(name, big) {
     const text = document.createTextNode('?');
     top.append(text);
     quote.append(top);
-    const author = document.createElement('a');
-    author.classList.add('quote-author');
-    author.href = `/authors/?`;
-    author.innerText = '?';
-    onLink(author);
-    quote.append(author);
     const tags = document.createElement('div');
     tags.innerText = 'Tags: ?';
     quote.append(tags);
     fetch(`/quotes/${name}.json`).then(res => res.json()).then(data => {
         text.nodeValue = data.text;
-        author.innerText = data.author;
         tags.innerText = 'Tags:';
         for (const tag of data.tags) {
             const tagElement = document.createElement('a');
@@ -167,4 +164,10 @@ function autorun() {
             document.getElementById('quote-list').append(link);
         }
     });
+
+    document.getElementById('search').onsubmit = () => {
+        const query = document.getElementById('search-input').value.replaceAll(' ', '+');
+        location.href = `https://google.com/search?q=site%3Amagicquotes.org+${query}`;
+        return false;
+    };
 }
